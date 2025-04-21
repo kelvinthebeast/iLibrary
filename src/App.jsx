@@ -1,9 +1,13 @@
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Dashboard from './pages/Dashboard'
 
-import Button from '@mui/material/Button'
 function App() {
   return (
     <>
-      <Button>Hay clic tui đi</Button>
+      <Header />
+      <Sidebar />
+      <Dashboard />
     </>
   )
 }
