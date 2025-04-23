@@ -1,15 +1,15 @@
-import { Drawer, List, ListItem, ListItemText } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
   return (
-    <Drawer variant="permanent" anchor="left" sx={{ width: 240, flexShrink: 0 }}>
-      <List sx={{ mt: 8, cursor: 'pointer', backgroundColor: '#f0f0f0', height: '100vh' }}>
-        {['Overview', 'Products', 'Users', 'Settings'].map((text) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </Drawer>
+    <aside className="w-64 bg-gray-800 text-white p-4">
+      <h2 className="text-xl font-bold mb-4">📚 iLibrary</h2>
+      <ul className="space-y-2">
+        <li><Link to="/dashboard">🏠 Dashboard</Link></li>
+        <li><Link to="/books">📘 Books</Link></li>
+        <li><Link to="/users">👥 Users</Link></li>
+        <li><Link to="/borrows">📖 Borrowing</Link></li>
+      </ul>
+    </aside>
   )
 }
