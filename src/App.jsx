@@ -1,11 +1,22 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Dashboard from './pages/Dashboard';
 
-import Button from '@mui/material/Button'
-function App() {
+const App = () => {
   return (
-    <>
-      <Button>Hay clic tui đi</Button>
-    </>
-  )
-}
+    <Router>
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
+        <div style={{ flex: 1, padding: '20px' }}>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            {/* Các route khác thêm ở đây */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
