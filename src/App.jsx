@@ -31,26 +31,3 @@ function App() {
 }
 
 export default App
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Home from './pages/Home';
-// import Profiles from './pages/Profiles';
-// import Following from './pages/Following';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="app">
-//         <div>Route example</div>
-//         <Routes>
-//           <Route path='/' element={<div>Trang app</div>} />
-//           <Route path='/home' element={<Home />} />
-//           <Route path='/following' element={<Following />} />
-//           <Route path='/profiles' element={<Profiles />} />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;

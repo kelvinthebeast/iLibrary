@@ -1,7 +1,7 @@
-import React from 'react'
 
-export default function index() {
+
+export default function Upload() {
   return (
-    <div>index</div>
+    <div>Upload</div>
   )
 }
