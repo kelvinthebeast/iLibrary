@@ -1,0 +1,29 @@
+/* Cố định slider dính bên trái */
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding-top: 60px; /* Khoảng trống cho Header */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+/* Tùy chỉnh nav-link */
+.slider .nav-link {
+  color: #333;
+  font-weight: 500;
+  padding: 15px 20px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover và active style */
+.slider .nav-link:hover,
+.slider .nav-link.active {
+  background-color: #f0f0f0;
+  color: #000;
+  border-left: 4px solid #007bff;
+}

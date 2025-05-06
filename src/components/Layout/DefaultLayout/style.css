@@ -1,0 +1,72 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set font and background for body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Layout container: sidebar + main content */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar (Slider) */
+.slider {
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+  position: fixed;
+  top: 56px; /* Height of the Header */
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.slider .nav-link {
+  padding: 12px 16px;
+  color: #333;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.slider .nav-link:hover,
+.slider .nav-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Main content */
+.layout-main {
+  flex: 1;
+  margin-left: 220px; /* Equal to sidebar width */
+  padding: 32px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  height: 56px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

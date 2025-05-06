@@ -8,7 +8,14 @@ const request = axios.create({
 })
 
 
-export const getBook = () => request.get('/books');
+export const fetchBooks = () => request.get('/books')
+
+// Gọi API thêm sách
+export const createBook = (book, token) =>
+  request.post('/books', book, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+
 export const get = async (url, params = {}) => {
   const response = await request.get(url, params)
   return response.data

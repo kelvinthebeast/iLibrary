@@ -1,15 +1,56 @@
 import React from 'react'
 import './AdminDashboard.css'
-
+import { useState } from 'react'
+import { useEffect } from 'react'
+import * as request from '../../utils/request'
+import { Link } from 'react-router-dom'
 export default function AdminDashboard() {
+  const [books, setBooks] = useState([])
+
+  const [formData, setFormData] = useState({
+    title: '',
+    author: '',
+    price: '',
+    description: '',
+    stock: ''
+  })
+
+  useEffect(() => {
+    request.fetchBooks()
+      .then((res) => setBooks(res.data))
+      .catch((err) => console.error('Failed to fetch books:', err))
+  }, [])
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  // Gửi form thêm sách
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch('http://localhost:5000/api/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}` // token từ localStorage sau khi đăng nhập
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message)
+        window.location.reload()
+      })
+      .catch(err => console.error(err))
+  }
   return (
     <div className="admin-dashboard">
       <aside className="admin-sidebar">
         <h2>📘 BookStore Admin</h2>
         <ul>
           <li>📊 Overview</li>
-          <li>📚 Books</li>
-          <li>🧾 Orders</li>
+          <li><Link to="/books">📚 Books</Link></li>
+          <li><Link to="/orders">🧾 Orders</Link></li>
           <li>💰 Revenue</li>
         </ul>
       </aside>
@@ -58,6 +99,43 @@ export default function AdminDashboard() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          {/*api book */}
+          <div className="book-table">
+            <h2>📖 Book List</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {books.map((book) => (
+                  <tr key={book._id}>
+                    <td>{book.title}</td>
+                    <td>{book.author}</td>
+                    <td>{book.price}$</td>
+                    <td>{book.stock > 0 ? 'In Stock' : 'Out of Stock'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {/* End api book */}
+
+          <div className="add-book-form">
+            <h2> Add New Book</h2>
+            <form onSubmit={handleSubmit}>
+              <input type="text" name="title" placeholder="Title" onChange={handleChange} required />
+              <input type="text" name="author" placeholder="Author" onChange={handleChange} required />
+              <input type="number" name="price" placeholder="Price" onChange={handleChange} required />
+              <input type="text" name="description" placeholder="Description" onChange={handleChange} />
+              <input type="text" name="stock" placeholder="Stock" onChange={handleChange} required />
+              <button type="submit">Add Book</button>
+            </form>
           </div>
         </section>
       </div>

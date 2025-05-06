@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { publicRoutes } from './routes'
 import { DefaultLayout } from './components/Layout'
 import { Fragment } from 'react'
-import * as request from './utils/request'
+// import * as request from './utils/request'
 function App() {
   return (
     <>
@@ -19,7 +19,6 @@ function App() {
               }
               const Page = route.component
               return (
-                // bấm alt + w
                 <Route key = {index} path={route.path} element={<Layout><Page/></Layout>}></Route>
               )
             })}
