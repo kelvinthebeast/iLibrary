@@ -1,0 +1,88 @@
+.suggestionsSection {
+  margin: 32px 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.card {
+  min-width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 16px;
+  flex: 0 0 auto;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 4px 16px #0002;
+}
+.title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.category {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 8px;
+}
+.rating {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+/* Container toàn bộ */
+.recipe-suggestions {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+.recipe-suggestions h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Carousel ngang */
+.recipe-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Cho iOS scroll mượt */
+}
+
+/* Mỗi card công thức */
+.recipe-card {
+  flex: 0 0 auto;
+  width: 80vw;              /* 80% chiều rộng màn hình */
+  max-width: 250px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 14px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card h4 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.recipe-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
