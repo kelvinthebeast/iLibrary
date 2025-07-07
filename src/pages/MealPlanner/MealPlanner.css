@@ -1,0 +1,69 @@
+.meal-planner {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.calendar-day {
+  background: var(--background);
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: background 0.5s;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.day-header button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.recipes-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-item {
+  background: #dfe6e9;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nutrition-summary {
+  margin-top: 2rem;
+  background: var(--background);
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: background 0.5s;
+}
