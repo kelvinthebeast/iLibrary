@@ -1,0 +1,85 @@
+.nutrition-info {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: var(--background);
+  transition: background 0.5s;
+}
+
+.nutrition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.nutrition-header h4 {
+  margin: 0;
+}
+
+.nutrition-header button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.nutrition-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nutrition-bar span {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #dfe6e9;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  display: block;
+  height: 8px;
+  background: #0984e3;
+  width: 100%;
+  transform-origin: left;
+}
+
+.bar.protein::after {
+  background: #00b894;
+}
+
+.bar.fat::after {
+  background: #e17055;
+}
+
+.bar.carbs::after {
+  background: #6c5ce7;
+}
+
+.bar::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 0.4s;
+}
+
+.nutrition-bar .bar {
+  position: relative;
+}
+
+.nutrition-info.highlight {
+  border: 2px solid #00b894;
+}
