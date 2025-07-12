@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 
 const ProfileEditForm = () => {
-  const { user, login } = useAuth();
-  const navigate = useNavigate();
+  const { user, login } = useAuth()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: user?.username || '',
     email: user?.email || '',
     profilePicture: user?.profilePicture || '',
-  });
+  })
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      alert('Invalid email format');
-      return;
+      alert('Invalid email format')
+      return
     }
-    login(formData);
-    navigate('/profile');
-  };
+    login(formData)
+    navigate('/profile')
+  }
 
   return (
     <form
@@ -63,7 +63,7 @@ const ProfileEditForm = () => {
         </button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default ProfileEditForm;
+export default ProfileEditForm

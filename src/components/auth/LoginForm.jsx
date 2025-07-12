@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!/^\S+@\S+\.\S+$/.test(email)) {
-      setError('Invalid email format');
-      return;
+      setError('Invalid email format')
+      return
     }
     if (password.length < 8) {
-      setError('Password must be at least 8 characters');
-      return;
+      setError('Password must be at least 8 characters')
+      return
     }
-    localStorage.setItem('user', JSON.stringify({ email }));
-    navigate('/');
-  };
+    localStorage.setItem('user', JSON.stringify({ email }))
+    navigate('/')
+  }
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
@@ -43,6 +43,6 @@ const LoginForm = () => {
         Login
       </button>
     </form>
-  );
-};
-export default LoginForm;
+  )
+}
+export default LoginForm

@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const RatingStars = ({ recipeId, initialRating }) => {
   const [rating, setRating] = useState(initialRating || 0)
+  const [hovered, setHovered] = useState(null)
 
   const handleRating = async (value) => {
     setRating(value)
@@ -15,15 +16,20 @@ const RatingStars = ({ recipeId, initialRating }) => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex items-center gap-1">
       {[1, 2, 3, 4, 5].map((star) => (
         <FaStar
           key={star}
-          className={star <= rating ? 'text-yellow-400' : 'text-gray-300'}
+          className={`cursor-pointer text-2xl transition-transform duration-150 ${
+            (hovered || rating) >= star ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'
+          } hover:scale-110`}
           onClick={() => handleRating(star)}
+          onMouseEnter={() => setHovered(star)}
+          onMouseLeave={() => setHovered(null)}
         />
       ))}
     </div>
   )
 }
+
 export default RatingStars

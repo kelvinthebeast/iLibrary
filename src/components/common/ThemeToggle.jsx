@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useState, useEffect } from 'react'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false)
 
   // Khi component mount, đọc từ localStorage và áp dụng theme
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme === 'dark' || (!savedTheme && prefersDark);
-    setIsDark(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme);
-  }, []);
+    const savedTheme = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const initialTheme = savedTheme === 'dark' || (!savedTheme && prefersDark)
+    setIsDark(initialTheme)
+    document.documentElement.classList.toggle('dark', initialTheme)
+  }, [])
 
   // Khi isDark thay đổi, cập nhật class và localStorage
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
+    document.documentElement.classList.toggle('dark', isDark)
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  }, [isDark])
 
   return (
     <button
@@ -31,7 +31,7 @@ const ThemeToggle = () => {
         <FaMoon className="text-gray-600 text-xl" />
       )}
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggle;
+export default ThemeToggle
