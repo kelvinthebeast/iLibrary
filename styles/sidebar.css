@@ -1,3 +1,4 @@
+@import "tailwindcss";
 .sidebar {
   width: 240px;
   height: 100vh;

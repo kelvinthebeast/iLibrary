@@ -1,0 +1,49 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta dish",
+      "ingredients": [
+        "spaghetti",
+        "ground beef",
+        "tomato sauce"
+      ],
+      "instructions": "Cook pasta, prepare sauce, combine.",
+      "cookingTime": 45,
+      "servings": 4,
+      "category": "Dinner",
+      "rating": 5,
+      "nutritionalInfo": {
+        "calories": 600,
+        "protein": 25,
+        "fat": 15,
+        "carbs": 80
+      },
+      "comments": [
+        {
+          "username": "User1",
+          "text": "Delicious!",
+          "timestamp": "2025-06-01T10:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c922",
+      "title": "Nhan",
+      "description": "",
+      "ingredients": [],
+      "instructions": "123",
+      "cookingTime": 12,
+      "servings": 1,
+      "category": "Breakfast",
+      "nutritionalInfo": {
+        "calories": 12,
+        "protein": 12,
+        "fat": 12,
+        "carbs": 12
+      }
+    }
+  ],
+  "users": []
+}

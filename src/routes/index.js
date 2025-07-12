@@ -12,7 +12,7 @@ const publicRoutes = [
   { path: '/upload', component: Upload, layout: null },
   { path: '/recipe', component: Recipe, layout: null },
 
-  { path: '/suggest', component: RecipeSuggestions, layout: null }
+  { path: '/suggest', component: RecipeSuggestions }
 
 ]
 const privateRoutes = []

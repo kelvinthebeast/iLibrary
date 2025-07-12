@@ -1,0 +1,45 @@
+/* Navbar wrapper */
+nav {
+  background-color: #1f2937; /* bg-gray-800 */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo or site name */
+nav a.text-xl {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Link hover underline */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Right section: buttons and links */
+nav .flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logout button styling */
+nav button {
+  background-color: #ef4444; /* bg-red-500 */
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #dc2626; /* hover:bg-red-600 */
+}

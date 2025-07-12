@@ -1,56 +1,32 @@
+import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './components/auth/LoginForm';
+import Register from './components/auth/RegisterForm';
+import RecipeDetails from './pages/RecipeDetails';
+import Profile from './pages/Profile';
+import Navbar from './components/common/Navbar';
+import RecipeForm from './components/recipe/RecipeForm';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { publicRoutes } from './routes'
-import { DefaultLayout } from './components/Layout'
-import { Fragment } from 'react'
-import * as request from './utils/request'
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
-        <div className="app">
+        <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+          <Navbar />
           <Routes>
-            {publicRoutes.map((route, index) => {
-              let Layout = DefaultLayout
-              if (route.layout) {
-                Layout = route.layout
-              } else if (route.layout === null) {
-                Layout = Fragment
-              }
-              const Page = route.component
-              return (
-                // bấm alt + w
-                <Route key = {index} path={route.path} element={<Layout><Page/></Layout>}></Route>
-              )
-            })}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recipe/:id" element={<RecipeDetails />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/add-recipe" element={<RecipeForm />} />
+            <Route path="/edit-recipe/:id" element={<RecipeForm />} />
           </Routes>
         </div>
       </Router>
-    </>
-  )
+    </AuthProvider>
+  );
 }
-
-export default App
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Home from './pages/Home';
-// import Profiles from './pages/Profiles';
-// import Following from './pages/Following';
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="app">
-//         <div>Route example</div>
-//         <Routes>
-//           <Route path='/' element={<div>Trang app</div>} />
-//           <Route path='/home' element={<Home />} />
-//           <Route path='/following' element={<Following />} />
-//           <Route path='/profiles' element={<Profiles />} />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
+export default App;
