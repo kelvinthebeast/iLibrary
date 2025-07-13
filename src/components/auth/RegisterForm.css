@@ -1,0 +1,100 @@
+/* Nền toàn màn hình với gradient hiện đại, mượt */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9F44D3, #5E60CE, #3A0CA3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+/* Hộp đăng ký: bo tròn, bóng đổ nhẹ, khoảng cách thoáng */
+.register-container {
+  background-color: #ffffff;
+  padding: 48px 40px;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.register-container:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Tiêu đề trung tâm, nổi bật */
+.register-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Label rõ ràng, font hiện đại */
+.register-container label {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #444444;
+  font-weight: 500;
+}
+
+/* Input thoáng, tương tác mượt */
+.register-container input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+  background-color: #f9f9f9;
+}
+
+.register-container input:focus {
+  border-color: #7b2cbf;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(123, 44, 191, 0.15);
+}
+
+/* Nút Register: lớn, mạnh, gradient hiện đại */
+.register-container button {
+  padding: 0.9rem 1rem;
+  font-size: 1.125rem;
+  background: linear-gradient(to right, #7209b7, #560bad);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.register-container button:hover {
+  background: linear-gradient(to right, #5f0aa5, #3f0780);
+  transform: translateY(-1px);
+}
+
+.register-container button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive tối thiểu */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .register-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .register-container button {
+    font-size: 1rem;
+  }
+}

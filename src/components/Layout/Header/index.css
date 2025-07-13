@@ -1,0 +1,62 @@
+/* Đặt header ở góc phải trên cùng */
+.header {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #1f2937;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+/* Tiêu đề app */
+.app-title {
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+/* Toggle button */
+.toggle-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Link login/register */
+.auth-links a {
+  color: #a78bfa; /* tím sáng */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode toàn trang */
+body.dark {
+  background: #111827 !important;
+  color: #f9fafb;
+}
+
+body.dark .header {
+  background-color: #0f172a;
+}
+
+body.dark .auth-links a {
+  color: #93c5fd;
+}
